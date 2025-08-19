@@ -1,0 +1,113 @@
+.black-publisher {
+    width: 100%;
+    height: 2.1rem;
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-general {
+    display: flex;
+}
+
+.nav-list_left {
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: space-between;
+    width: 50%;
+    height: 5.0rem;
+
+    .list-left {
+        display: flex;
+    }
+
+    .list-left li {
+        list-style: none;
+        padding: 2.5rem;
+        font-size: 1.4rem;
+    }
+
+    .list-left li a {
+        text-decoration: none;
+        color: black;
+    }
+}
+
+.nav-list_right {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 50%;
+    height: 5.0rem;
+    align-content: space-between;
+    flex-direction: row;
+
+    .list-right {
+        display: flex;
+    }
+
+    .list-right li {
+        list-style: none;
+        padding: 3.5rem;
+        font-size: 1.4rem;
+    }
+
+    .list-right li a {
+        text-decoration: none;
+        color: black;
+    }
+}
+
+.logo-nav {
+    width: 100%;
+    height: 9.0rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+        width: 13.0rem;
+        height: 12.0rem;
+    }
+}
+
+.list-menu {
+    display: flex;
+    width: 100%;
+    height: 5.5rem;
+    justify-content: flex-end;
+    align-items: center;
+
+    li {
+        list-style: none;
+        margin: 2.0px;
+        padding: 0 2.0rem;
+        font-size: 1.5rem;
+    }
+
+    a {
+        text-decoration: none;
+        color: black;
+    }
+
+}
+
+.menu-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.menu-center input {
+    display: flex;
+    width: 19.0rem;
+    height: 3.0rem;
+    text-align: center;
+    border: none;
+    border-bottom: .1rem black solid;
+    border-radius: 0;
+    margin: 0 5.5rem 0 15.1rem;
+}

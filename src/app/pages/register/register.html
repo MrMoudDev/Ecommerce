@@ -1,0 +1,64 @@
+<form
+    [formGroup]="formData"
+    (ngSubmit)="registerSubmit()"
+    action="" class="form-register"
+>
+    <div class="form-register_content">
+        <div class="tittle">
+            <h1>BIENVENIDO/A</h1>
+            <h2>Registrate</h2>
+        </div>
+
+        <div class="field">
+            <label for="name">Nombres</label>
+            <input type="text" formControlName="name" id="name">
+            <!-- Estructura condicional utilizando *ngIf
+            <div class="error">
+                <div *ngIf="formData.get('name')?.invalid && (formData.get('name')?.touched || formData.get('name')?.dirty)">
+                    *Nombre invalido*
+                </div>
+                <div *ngIf="formData.get('name')?.errors?.['required']">
+                    El nombre del usuario es requerido
+                </div>
+            </div> -->
+            <div class="error">
+                @if (formData.get('name')?.invalid && (formData.get('name')?.touched || formData.get('name')?.dirty)) {}
+                    @if (formData.get('name')?.errors?.['required']) {
+                        <span>El nombre del usuario es requerido</span>
+                    }
+            </div>
+
+            <label for="correo">Correo electrónico *</label>
+            <input type="text" formControlName="correo" id="correo">
+            <div class="error">
+                @if (formData.get('correo')?.invalid && (formData.get('correo')?.touched || formData.get('correo')?.dirty)) {}
+                    @if (formData.get('correo')?.errors?.['required']) {
+                        <span>El Correo es requerido</span>
+                    }
+                    @if (formData.get('correo')?.errors?.['email']) {
+                        <span>El formato del correo es invalido</span>
+                    }
+            </div>
+            <label for="password">Contraseña *</label>
+            <input type="password" formControlName="password" id="password">
+            <div class="error">
+                @if (formData.get('password')?.invalid && (formData.get('password')?.touched || formData.get('password')?.dirty)) {}
+                    @if (formData.get('password')?.errors?.['required']) {
+                        <span>La contraseña es requerida</span>
+                    }
+                    @if (formData.get('password')?.errors?.['minlength']) {
+                        <span>La contraseña debe tener minimo 8 caracteres</span>
+                    }
+                    @if (formData.get('password')?.errors?.['maxlength']) {
+                        <span>La contraseña debe tener maximo 12 caracteres</span>
+                    }
+            </div>
+            </div>
+        <div class="field-1">
+            <button type="submit" class="btn-registerUser"
+            [disabled]="formData.invalid"
+            [class.disabled-button]="formData.invalid"
+            >Registrar</button>
+        </div>
+    </div>
+</form>

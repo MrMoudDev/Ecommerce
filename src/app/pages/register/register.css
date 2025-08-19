@@ -1,0 +1,75 @@
+.form-register {
+    width: 100%;
+    height: 900px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-register_content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 15px;
+    border: 1px solid black;
+    width: 30%;
+    height: 500px;
+}
+
+.form-register_content {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form-register_content .tittle{
+    display: flex;
+    font-weight: bold;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.field {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.field input {
+    outline: 0;
+    border: 1px solid black;
+    box-sizing: border-box;
+    margin: 10px;
+    width: 100%;
+    height: 30px;
+}
+
+.form-register_content .field-1 .btn-registerUser {
+    margin: 15px;
+}
+
+button {
+    border: 1px solid black;
+    width: 100px;
+    height: 20px;
+    font-weight: bold;
+    border-radius: 5px;
+    box-shadow: 1px;
+}
+
+.error {
+    font-style: italic;
+    font-size: 13px;
+    margin-bottom: 22px;
+    color: red;
+    font-weight: bold;
+}
+
+.disabled-button {
+    background-color: beige;
+    color: black;
+    cursor: not-allowed;
+    border-color: black;
+}
