@@ -1,4 +1,7 @@
-<form action="">
+<form
+[formGroup]="formData"
+(ngSubmit)="loginSubmit()"
+action="" class="form-login">
     <div class="form-login">
         <div class="form-login_user">
             <div class="tittle">
@@ -6,15 +9,41 @@
             </div>
             <div class="field">
                 <label for="correo-user">Correo electrónico *</label>
-                <input type="text" id="correo-user" name="correo-user">
+                <input type="email" formControlName="correo" id="correo-user">
+                <div class="error">
+                    @if (formData.get('correo')?.invalid && (formData.get('correo')?.touched || formData.get('correo')?.dirty)) {
+                        @if (formData.get('correo')?.errors?.['required']) {
+                            <span>*Correo es requerido*</span>
+                        }
+                        @if (formData.get('correo')?.errors?.['email']) {
+                            <span>*El formato del correo es invalido</span>
+                        }
+                    }
+                </div>
                 <label for="password-user">Contraseña *</label>
-                <input type="text" id="password-user" name="password-user">
+                <input type="password" formControlName="password" id="password-user">
+                <div class="error">
+                    @if (formData.get('password')?.invalid && (formData.get('password')?.touched || formData.get('password')?.dirty)) {
+                        @if (formData.get('password')?.errors?.['required']) {
+                            <span>*La contraseña es requerida*</span>
+                        }
+                        @if (formData.get('password')?.errors?.['minlength']) {
+                            <span>*La contraseña debe tener minimo 8 caracteres</span>
+                        }
+                        @if (formData.get('password')?.errors?.['maxlength']) {
+                            <span>*La contraseña debe tener maximo 12 caracteres</span>
+                        }
+                    }
+                </div>
             </div>
             <div class="password-user_olvidada">
                 <li><a href="olvide-contraseña">Olvidé mi contraseña</a></li>
             </div>
             <div class="btn-login">
-                <button class="btn-login1">Continuar</button>
+                <button type="submit" class="btn-login1"
+                [disabled]="formData.invalid"
+                [class.disabled-button]="formData.invalid">
+                Continuar</button>
                 <button class="btn-login2">Atrás</button>
             </div>
             <div class="protect">
